@@ -399,4 +399,3 @@ export function OnboardingForm({ institution }: OnboardingFormProps) {
     </div>
   )
 } 
-} 

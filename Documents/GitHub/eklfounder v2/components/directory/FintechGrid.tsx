@@ -191,7 +191,7 @@ export function FintechGrid({ filters, onTotalChange }: FintechGridProps) {
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Risk Level</span>
                 <span className="font-medium text-foreground">
-                  {institution.riskLevel}
+                  {institution.acceptedRisk}
                 </span>
               </div>
             </div>

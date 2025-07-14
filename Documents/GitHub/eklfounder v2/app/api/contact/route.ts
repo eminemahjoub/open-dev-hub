@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
           <hr>
           <p><small>Sent from EklFounder contact form</small></p>
         `,
-        replyTo: validatedData.email
+        reply_to: validatedData.email
       })
     } catch (emailError) {
       console.error('Error sending contact email:', emailError)

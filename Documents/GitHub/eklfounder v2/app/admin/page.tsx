@@ -1,37 +1,48 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { Loader2 } from 'lucide-react'
 import { AdminDashboard } from '@/components/admin/AdminDashboard'
 
-export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  description: 'EklFounder administration dashboard',
-}
-
 export default function AdminPage() {
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Admin Dashboard
-              </h1>
-              <p className="text-muted-foreground mt-1">
-                Manage institutions, applications, and platform settings
-              </p>
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Welcome back, Admin
-            </div>
-          </div>
+  const { data: session, status } = useSession()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (status === 'loading') return // Still loading
+
+    if (!session) {
+      router.push('/admin/auth/signin')
+      return
+    }
+
+    // Check if user has admin role
+    if (!session.user?.role || session.user.role !== 'admin') {
+      router.push('/admin/auth/signin')
+      return
+    }
+  }, [session, status, router])
+
+  if (status === 'loading') {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
+          <p className="text-muted-foreground">Loading admin dashboard...</p>
         </div>
       </div>
+    )
+  }
 
-      {/* Dashboard */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <AdminDashboard />
-      </div>
+  if (!session) {
+    return null // Will redirect to signin
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <AdminDashboard />
     </div>
   )
 } 

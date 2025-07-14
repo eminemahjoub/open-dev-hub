@@ -1,53 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { Star, ExternalLink, CheckCircle, XCircle } from 'lucide-react'
+import { Star, ExternalLink, CheckCircle, XCircle, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
+import type { Fintech } from '@/types'
 
-// Données temporaires
-const comparisonData = [
-  {
-    id: '1',
-    name: 'Revolut Business',
-    logo: '🏦',
-    slug: 'revolut-business',
-    category: 'EMI',
-    monthlyFee: 25,
-    setupFee: 0,
-    transactionFees: '0.5%',
-    countries: ['UK', 'EU', 'US'],
-    rating: 4.8,
-    reviewCount: 1250,
-    isPartner: true,
-    onboardingTime: '3-5 days',
-    multiCurrency: true,
-    apiAccess: true,
-    mobileApp: true,
-    support24_7: true,
-    acceptedRisk: 'Medium',
-  },
-  {
-    id: '2',
-    name: 'Wise Business',
-    logo: '💰',
-    slug: 'wise-business',
-    category: 'EMI',
-    monthlyFee: 0,
-    setupFee: 0,
-    transactionFees: '0.4%',
-    countries: ['UK', 'EU', 'US', 'AU'],
-    rating: 4.9,
-    reviewCount: 2100,
-    isPartner: true,
-    onboardingTime: '2-4 days',
-    multiCurrency: true,
-    apiAccess: false,
-    mobileApp: true,
-    support24_7: false,
-    acceptedRisk: 'Low',
-  },
-]
+interface CompareTableProps {
+  institutions: Fintech[]
+  onRemoveInstitution?: (id: string) => void
+}
 
 const comparisonFields = [
   { key: 'category', label: 'Category', type: 'badge' },
@@ -56,15 +18,14 @@ const comparisonFields = [
   { key: 'transactionFees', label: 'Transaction Fees', type: 'text' },
   { key: 'countries', label: 'Available Countries', type: 'list' },
   { key: 'acceptedRisk', label: 'Risk Level', type: 'text' },
-  { key: 'onboardingTime', label: 'Onboarding Time', type: 'text' },
-  { key: 'multiCurrency', label: 'Multi-currency', type: 'boolean' },
-  { key: 'apiAccess', label: 'API Access', type: 'boolean' },
-  { key: 'mobileApp', label: 'Mobile App', type: 'boolean' },
-  { key: 'support24_7', label: '24/7 Support', type: 'boolean' },
+  { key: 'minTurnover', label: 'Min. Turnover', type: 'price' },
+  { key: 'isVerified', label: 'Verified', type: 'boolean' },
+  { key: 'isPartner', label: 'Partner', type: 'boolean' },
+  { key: 'supportedCurrencies', label: 'Currencies', type: 'list' },
 ]
 
-export function CompareTable() {
-  if (comparisonData.length === 0) {
+export function CompareTable({ institutions, onRemoveInstitution }: CompareTableProps) {
+  if (institutions.length === 0) {
     return (
       <div className="bg-card border rounded-lg p-12 text-center">
         <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -77,24 +38,30 @@ export function CompareTable() {
     )
   }
 
-  const renderCellValue = (field: any, institution: any) => {
-    const value = institution[field.key]
+  const renderCellValue = (field: any, institution: Fintech) => {
+    const value = institution[field.key as keyof Fintech]
     
     switch (field.type) {
       case 'badge':
-        return <Badge variant="secondary">{value}</Badge>
-      case 'price':
-        return <span className="font-medium">€{value}</span>
+        return <Badge variant="secondary">{value as string}</Badge>
+              case 'price':
+          if (value === null || value === undefined) {
+            return <span className="text-muted-foreground">N/A</span>
+          }
+          return <span className="font-medium">€{String(value)}</span>
       case 'list':
-        return <span className="text-sm">{value.join(', ')}</span>
+        if (!value || !Array.isArray(value)) {
+          return <span className="text-muted-foreground">None</span>
+        }
+        return <span className="text-sm">{(value as string[]).slice(0, 3).join(', ')}{(value as string[]).length > 3 ? '...' : ''}</span>
       case 'boolean':
-        return value ? (
+        return (value as boolean) ? (
           <CheckCircle className="h-5 w-5 text-green-500" />
         ) : (
           <XCircle className="h-5 w-5 text-red-500" />
         )
       default:
-        return <span>{value}</span>
+        return <span>{value as string || 'N/A'}</span>
     }
   }
 
@@ -105,7 +72,7 @@ export function CompareTable() {
           <thead>
             <tr className="border-b bg-muted/30">
               <th className="text-left p-4 w-48">Features</th>
-              {comparisonData.map((institution) => (
+              {institutions.map((institution) => (
                 <th key={institution.id} className="text-center p-4 min-w-64">
                   <div className="space-y-3">
                     <div className="flex flex-col items-center space-y-2">
@@ -159,7 +126,7 @@ export function CompareTable() {
                 <td className="p-4 font-medium text-foreground border-r">
                   {field.label}
                 </td>
-                {comparisonData.map((institution) => (
+                {institutions.map((institution) => (
                   <td key={institution.id} className="p-4 text-center">
                     {renderCellValue(field, institution)}
                   </td>

@@ -177,7 +177,7 @@ export function AdminDashboard() {
     const headers = Object.keys(data[0] || {})
     const csvContent = [
       headers.join(','),
-      ...data.map(row => headers.map(header => `"${row[header] || ''}"`).join(','))
+      ...data.map((row: any) => headers.map(header => `"${row[header] || ''}"`).join(','))
     ].join('\n')
 
     return csvContent
