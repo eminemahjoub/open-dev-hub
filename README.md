@@ -39,25 +39,72 @@ Finding high-quality, practical resources across many developer domains is time-
 | 🛡️ Cybersecurity & CTF | Learning paths, tooling, CTF write-ups and practice platforms |
 | ⚙️ Dev Tools & Automation | CI/CD templates, scripts, and automation best-practices |
 | 🌱 IoT & Embedded Systems | Microcontroller guides, hardware projects, and tooling |
+| 📱 Mobile Development | Cross-platform and native mobile app development resources |
+| ☁️ Cloud & DevOps | Cloud platforms, infrastructure, and DevOps practices |
 
 Jump in:
-- ai-ml/README.md
-- web-development/README.md
-- cybersecurity-ctf/README.md
-- dev-tools-automation/README.md
-- iot-embedded/README.md
+- [ai-ml/README.md](ai-ml/README.md) - AI & Machine Learning resources
+- [web-development/README.md](web-development/README.md) - Web development frameworks and tools
+- [cybersecurity-ctf/README.md](cybersecurity-ctf/README.md) - Security and CTF resources
+- [dev-tools-automation/README.md](dev-tools-automation/README.md) - Development tools and automation
+- [iot-embedded/README.md](iot-embedded/README.md) - IoT and embedded systems
+- [mobile-development/README.md](mobile-development/README.md) - Mobile app development
+- [cloud-devops/README.md](cloud-devops/README.md) - Cloud and DevOps resources
 
 ---
 
 ## Featured Open-Source Projects
 Here are some standout open-source projects that can help developers across domains:
 
-- **AI/ML**: [Hugging Face Transformers](https://github.com/huggingface/transformers) — Pre-trained models for NLP and more.
-- **Web Development**: [Next.js](https://github.com/vercel/next.js) — React framework for production web apps.
-- **Cybersecurity**: [OWASP ZAP](https://github.com/zaproxy/zaproxy) — Web application security scanner.
-- **Dev Tools**: [VS Code](https://github.com/microsoft/vscode) — Free, extensible code editor.
-- **IoT**: [Home Assistant](https://github.com/home-assistant/core) — Open-source home automation platform.
-- **General**: [Git](https://github.com/git/git) — Distributed version control system.
+### AI & Machine Learning
+- **[Hugging Face Transformers](https://github.com/huggingface/transformers)** — Pre-trained models for NLP and more
+- **[TensorFlow](https://github.com/tensorflow/tensorflow)** — End-to-end ML platform
+- **[PyTorch](https://github.com/pytorch/pytorch)** — Deep learning framework
+- **[scikit-learn](https://github.com/scikit-learn/scikit-learn)** — Machine learning library
+- **[LangChain](https://github.com/langchain-ai/langchain)** — Framework for building LLM applications
+
+### Web Development
+- **[Next.js](https://github.com/vercel/next.js)** — React framework for production web apps
+- **[Vue.js](https://github.com/vuejs/core)** — Progressive JavaScript framework
+- **[Svelte](https://github.com/sveltejs/svelte)** — Cybernetically enhanced web apps
+- **[Express](https://github.com/expressjs/express)** — Fast web framework for Node.js
+- **[FastAPI](https://github.com/tiangolo/fastapi)** — Modern Python web framework
+
+### Cybersecurity
+- **[OWASP ZAP](https://github.com/zaproxy/zaproxy)** — Web application security scanner
+- **[Metasploit Framework](https://github.com/rapid7/metasploit-framework)** — Penetration testing framework
+- **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)** — Reverse engineering framework
+- **[Burp Suite](https://portswigger.net/burp)** — Web application security testing
+
+### Dev Tools & Automation
+- **[VS Code](https://github.com/microsoft/vscode)** — Free, extensible code editor
+- **[Docker](https://github.com/docker/docker)** — Containerization platform
+- **[Kubernetes](https://github.com/kubernetes/kubernetes)** — Container orchestration
+- **[Terraform](https://github.com/hashicorp/terraform)** — Infrastructure as Code
+- **[Jenkins](https://github.com/jenkinsci/jenkins)** — Automation server
+
+### IoT & Embedded
+- **[Home Assistant](https://github.com/home-assistant/core)** — Open-source home automation platform
+- **[Arduino](https://github.com/arduino/Arduino)** — Open-source electronics platform
+- **[ESP-IDF](https://github.com/espressif/esp-idf)** — ESP32 development framework
+- **[PlatformIO](https://github.com/platformio/platformio-core)** — Cross-platform embedded development
+
+### Mobile Development
+- **[React Native](https://github.com/facebook/react-native)** — Build native apps with React
+- **[Flutter](https://github.com/flutter/flutter)** — Google's UI toolkit
+- **[Expo](https://github.com/expo/expo)** — React Native framework
+- **[Ionic](https://github.com/ionic-team/ionic)** — Cross-platform mobile framework
+
+### Cloud & DevOps
+- **[Terraform](https://github.com/hashicorp/terraform)** — Infrastructure as Code
+- **[Ansible](https://github.com/ansible/ansible)** — Configuration management
+- **[Prometheus](https://github.com/prometheus/prometheus)** — Monitoring system
+- **[Grafana](https://github.com/grafana/grafana)** — Analytics platform
+
+### General Tools
+- **[Git](https://github.com/git/git)** — Distributed version control system
+- **[GitHub CLI](https://github.com/cli/cli)** — GitHub from the command line
+- **[Vite](https://github.com/vitejs/vite)** — Next-generation frontend build tool
 
 Explore more in our category READMEs!
 
