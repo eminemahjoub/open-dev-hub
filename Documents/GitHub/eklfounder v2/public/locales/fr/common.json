@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "directory": "Annuaire",
+    "compare": "Comparer",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "title": "Trouvez le Partenaire Fintech Parfait pour Votre Entreprise",
+    "subtitle": "Comparez les EMI, banques, PSP et autres institutions financières. Intégrez-vous rapidement avec des tarifs transparents et des partenaires vérifiés.",
+    "cta_primary": "Comparer les Institutions",
+    "cta_secondary": "Comment ça marche",
+    "stats": {
+      "institutions": "Institutions",
+      "businesses": "Entreprises",
+      "countries": "Pays"
+    }
+  },
+  "features": {
+    "verified_partners": {
+      "title": "Partenaires Vérifiés",
+      "description": "Toutes les institutions sont soigneusement vérifiées pour la sécurité et la conformité."
+    },
+    "fast_onboarding": {
+      "title": "Intégration Rapide",
+      "description": "Processus de candidature simplifié avec un onboarding guidé étape par étape."
+    },
+    "smart_comparison": {
+      "title": "Comparaison Intelligente",
+      "description": "Comparez les frais, fonctionnalités et exigences côte à côte pour prendre des décisions éclairées."
+    },
+    "expert_support": {
+      "title": "Support Expert",
+      "description": "Obtenez des conseils de notre équipe d'experts fintech tout au long de votre parcours."
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "view_details": "Voir les détails",
+    "add_to_compare": "Ajouter à la comparaison",
+    "monthly_fee": "Frais mensuels",
+    "risk_level": "Niveau de risque",
+    "rating": "Note",
+    "reviews": "avis"
+  },
+  "footer": {
+    "description": "La plateforme leader pour comparer et s'intégrer avec les institutions fintech. Trouvez l'EMI, banque ou PSP parfait pour les besoins de votre entreprise.",
+    "platform": "Plateforme",
+    "company": "Entreprise",
+    "resources": "Ressources",
+    "copyright": "Tous droits réservés."
+  }
+} 

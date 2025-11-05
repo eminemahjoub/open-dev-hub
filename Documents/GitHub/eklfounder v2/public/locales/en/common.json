@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "home": "Home",
+    "directory": "Directory",
+    "compare": "Compare",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "title": "Find the Perfect Fintech Partner for Your Business",
+    "subtitle": "Compare EMIs, banks, PSPs, and other financial institutions. Get onboarded quickly with transparent pricing and verified partners.",
+    "cta_primary": "Compare Institutions",
+    "cta_secondary": "How it works",
+    "stats": {
+      "institutions": "Institutions",
+      "businesses": "Businesses", 
+      "countries": "Countries"
+    }
+  },
+  "features": {
+    "verified_partners": {
+      "title": "Verified Partners",
+      "description": "All institutions are thoroughly vetted and verified for security and compliance."
+    },
+    "fast_onboarding": {
+      "title": "Fast Onboarding",
+      "description": "Streamlined application process with guided step-by-step onboarding."
+    },
+    "smart_comparison": {
+      "title": "Smart Comparison",
+      "description": "Compare fees, features, and requirements side-by-side to make informed decisions."
+    },
+    "expert_support": {
+      "title": "Expert Support",
+      "description": "Get guidance from our team of fintech experts throughout your journey."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "view_details": "View Details",
+    "add_to_compare": "Add to Compare",
+    "monthly_fee": "Monthly fee",
+    "risk_level": "Risk Level",
+    "rating": "Rating",
+    "reviews": "reviews"
+  },
+  "footer": {
+    "description": "The leading platform for comparing and onboarding with fintech institutions. Find the perfect EMI, bank, or PSP for your business needs.",
+    "platform": "Platform",
+    "company": "Company",
+    "resources": "Resources",
+    "copyright": "All rights reserved."
+  }
+} 

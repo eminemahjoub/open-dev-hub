@@ -1,0 +1,168 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      Role     @default(ADMIN)
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Fintech {
+  id          String @id @default(cuid())
+  name        String
+  slug        String @unique
+  logo        String?
+  description String
+  website     String?
+  
+  // Informations financières
+  monthlyFee     Float?
+  setupFee       Float?
+  transactionFees String?
+  
+  // Informations géographiques
+  countries           String[] // Array of country codes
+  supportedCurrencies String[] // Array of currency codes
+  
+  // Classifications
+  category      FintechCategory
+  acceptedRisk  RiskLevel
+  minTurnover   Float?
+  
+  // Statuts
+  isPartner     Boolean @default(false)
+  isVerified    Boolean @default(false)
+  isRecommended Boolean @default(false)
+  
+  // Évaluations
+  rating      Float?
+  reviewCount Int?    @default(0)
+  
+  // Documents requis
+  requiredDocuments String[] // Array of required document types
+  
+  // Métadonnées
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isActive  Boolean  @default(true)
+  
+  // Relations
+  onboardingRequests OnboardingRequest[]
+
+  @@map("fintechs")
+}
+
+model OnboardingRequest {
+  id        String @id @default(cuid())
+  fintechId String
+  fintech   Fintech @relation(fields: [fintechId], references: [id], onDelete: Cascade)
+  
+  // Informations du demandeur
+  contactEmail String
+  contactName  String
+  contactPhone String?
+  
+  // Informations de l'entreprise
+  companyName         String
+  companyType         String
+  companyRegistration String?
+  companyAddress      String
+  companyCountry      String
+  
+  // Informations financières
+  estimatedTurnover   Float
+  businessDescription String
+  
+  // Documents (stockés en JSON pour le moment)
+  documents Json?
+  
+  // Statut
+  status      RequestStatus @default(PENDING)
+  statusNotes String?
+  
+  // Métadonnées
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("onboarding_requests")
+}
+
+model BlogPost {
+  id        String @id @default(cuid())
+  title     String
+  slug      String @unique
+  excerpt   String
+  content   String
+  category  String
+  tags      String[]
+  author    String
+  
+  publishedAt DateTime?
+  isPublished Boolean   @default(false)
+  locale      Locale    @default(EN)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("blog_posts")
+}
+
+model Newsletter {
+  id    String @id @default(cuid())
+  email String @unique
+  
+  isActive    Boolean @default(true)
+  subscribedAt DateTime @default(now())
+  
+  @@map("newsletter_subscribers")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum FintechCategory {
+  EMI
+  BANK
+  PSP
+  CRYPTO
+  OTHER
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum RequestStatus {
+  PENDING
+  REVIEW
+  APPROVED
+  REJECTED
+  COMPLETED
+}
+
+enum Locale {
+  EN
+  FR
+} 
