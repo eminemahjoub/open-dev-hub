@@ -1,0 +1,31 @@
+name: CI — Lint & Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: markdownlint
+        uses: davidanson/markdownlint-action@v1
+        with:
+          # optional: list of files/globs to lint
+          # default lints all .md files
+          config: .markdownlint.yaml
+
+  super-linter:
+    name: Super-Linter (optional)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint code + markdown with Super-Linter
+        uses: github/super-linter@v5
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

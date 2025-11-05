@@ -1,0 +1,7 @@
+# Code owners for automatic reviewer assignment
+# Use GitHub usernames (without @)
+# Example: docs/ @your-github-handle
+
+/docs/ @eminemahjoub
+ai-ml/ @eminemahjoub
+web-development/ @eminemahjoub

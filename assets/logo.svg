@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80" role="img" aria-label="open-dev-hub logo">
+  <rect width="240" height="80" rx="10" fill="#0b1220"/>
+  <text x="24" y="50" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">open-dev-hub</text>
+  <text x="24" y="66" fill="#9aa4b2" font-family="Inter, Arial, sans-serif" font-size="10">Open Foundry for Developers</text>
+</svg>

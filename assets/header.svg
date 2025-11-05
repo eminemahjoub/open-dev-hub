@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-label="open-dev-hub header">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="240" fill="url(#g)"/>
+  <g fill="#fff" font-family="Inter, Arial, sans-serif">
+    <text x="60" y="110" font-size="48" font-weight="700">open-dev-hub</text>
+    <text x="60" y="150" font-size="20" fill="#9aa4b2">A community-curated hub of resources, starters, and guides for developers</text>
+  </g>
+  <g transform="translate(900,40)" fill="#1f2937" opacity="0.06">
+    <circle cx="40" cy="40" r="40"/>
+    <circle cx="120" cy="40" r="40"/>
+    <circle cx="80" cy="100" r="40"/>
+  </g>
+</svg>
