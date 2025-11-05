@@ -49,6 +49,20 @@ Jump in:
 
 ---
 
+## Featured Open-Source Projects
+Here are some standout open-source projects that can help developers across domains:
+
+- **AI/ML**: [Hugging Face Transformers](https://github.com/huggingface/transformers) — Pre-trained models for NLP and more.
+- **Web Development**: [Next.js](https://github.com/vercel/next.js) — React framework for production web apps.
+- **Cybersecurity**: [OWASP ZAP](https://github.com/zaproxy/zaproxy) — Web application security scanner.
+- **Dev Tools**: [VS Code](https://github.com/microsoft/vscode) — Free, extensible code editor.
+- **IoT**: [Home Assistant](https://github.com/home-assistant/core) — Open-source home automation platform.
+- **General**: [Git](https://github.com/git/git) — Distributed version control system.
+
+Explore more in our category READMEs!
+
+---
+
 ## Quick start — contribute in 3 steps
 1. Fork this repository.
 2. Create a branch named `category/short-description` (e.g. `ai-ml/add-notebook`).
